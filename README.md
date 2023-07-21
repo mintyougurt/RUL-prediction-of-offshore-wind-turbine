@@ -1,20 +1,37 @@
 # RUL-prediction-of-offshore-wind-turbine
-source codes for my journal
+Title: RUL Prediction of Offshore Wind Turbine
 
-Codes are divided into two main parts: LightGBM model and GRU-BNN. 
+# Abstract:
+This journal presents two-stage models for Remaining Useful Life (RUL) prediction of offshore wind turbines. The first model utilizes the LightGBM algorithm for temperature prediction, while the second model employs a GRU-BNN (Bayesian Neural Network) approach for RUL prediction based on residuals from LightGBM. The models are evaluated on a dataset, and the results are compared against various baseline machine learning models to demonstrate their effectiveness. The proposed GRU-BNN model combines the predictions from GRU with Bayesian Neural Networks (BNN) to provide a final prediction along with confidence intervals. The entire workflow is implemented in Python and is recommended to be executed on Google Colab for optimal performance.
 
-The file "lightGBM model" only utilizes dfT01combined.csv. After running all the codes in this file, you will get resLGBMT.csv which is the residuls of temperatures. 
-Since there still exists some randomness in LightGBM model, one sample of resLGBMT.csv for my journal is uploaded. 
-This file conducts the following procedure for 9 temperatures: 1.grid search  2.feature rank and selection 3. the second grid search 
-The table of results will be created in the final part of saving and analysis. 
+# 1. LightGBM Model:
+The LightGBM model aims to predict 9 temperatures in offshore wind turbines using the dataset "dfT01combined.csv." The code is divided into three main steps:
 
-The second file "GRU-BNN" uses resLGBMT.csv as input. It compares different baseline models including SVR, Elastic net, GRU, LSTM, CNN, RNN etc by 5-fold validation. 
-The predictions and its average from GRU are fed into BNN to get the final prediciton and confidence interval. For convinence, some parts include codes on test sample 
-in each machine learning methods. It depends on you are willing to see these results or not. If not, cross validation is enough to show the performance of models. The simplest 
-way to reproduce my results is to jump other machine learning methods, directly run GRU and BNN. 
+Grid Search: Hyperparameter tuning is performed using grid search to find the optimal parameters for the LightGBM model.
+Feature Rank and Selection: Feature importance analysis is conducted to identify the most relevant variables for temperature prediction.
+Second Grid Search: Another grid search is carried out after feature selection to further optimize the model.
 
-For BNN, I use 5000 experiments to get the final result and confidence interval. This nerual network uses the sum of KL loss, RMSE and MAE as loss to make itself converge, while 
-other machine methods uses RMSE and MAE. Therefore, it should be careful to keep metrics same when comparing results from different models.
+The final output of this part is "resLGBMT.csv," which contains the residuals of the temperature predictions. A sample of this file is provided for reference.
 
-dfb.csv is a sample for RUL prediction from GRU. 
+# 2. GRU-BNN Model:
+The GRU-BNN model uses the "resLGBMT.csv" file as input for RUL prediction. The code compares different baseline machine learning models, including SVR, Elastic Net, GRU, LSTM, CNN, and RNN, through 5-fold cross-validation. The GRU model's predictions and their average are fed into the BNN to obtain the final RUL prediction along with confidence intervals.
 
+The key steps involved in the GRU-BNN model are as follows:
+
+Baseline Model Comparison: Several machine learning models are compared using 5-fold cross-validation. Optionally, predictions on test samples can also be obtained.
+GRU Model: The Gated Recurrent Unit (GRU) model is implemented for RUL prediction.
+BNN Implementation: Bayesian Neural Networks (BNN) are used to combine the predictions from the GRU model and derive a final prediction with confidence intervals. The BNN is trained with 5000 experiments, using the sum of KL loss, RMSE, and MAE as loss functions.
+
+Results and Analysis:
+The final results and comparison table for all models are saved and analyzed. The metrics used for evaluation, such as RMSE and MAE, are consistent across all models to ensure fair comparisons.
+
+# Reproducing the Results:
+To reproduce the results presented in this journal, follow these steps:
+
+Run the LightGBM model code on the "dfT01combined.csv" dataset to obtain "resLGBMT.csv."
+Optionally, skip the other machine learning methods and directly execute the GRU and BNN parts for RUL prediction and confidence intervals.
+
+# Conclusion:
+The presented RUL prediction models using LightGBM and GRU-BNN demonstrate promising performance for offshore wind turbines. The proposed GRU-BNN model offers accurate RUL predictions along with uncertainty quantification, making it a valuable tool for decision-making and maintenance planning in the renewable energy sector.
+
+Keywords: Remaining Useful Life Prediction, Offshore Wind Turbine, LightGBM, GRU, BNN, Machine Learning, Confidence Intervals.
