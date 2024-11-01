@@ -36,4 +36,4 @@ The presented RUL prediction models using LightGBM and GRU-BNN demonstrate promi
 
 Keywords: Remaining Useful Life Prediction, Offshore Wind Turbine, LightGBM, GRU, BNN, Machine Learning, Confidence Intervals.
 
-Note: Datasets are extracted from EDP open data and preprocessing steps are omitted.
+Note: The data used in this project have been cleaned extensively. To ensure proper usage and respect for the work involved, only the original data are available upon request.
