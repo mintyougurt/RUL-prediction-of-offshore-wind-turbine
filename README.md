@@ -1,5 +1,6 @@
 # RUL-prediction-of-offshore-wind-turbine
-Title: RUL Prediction of Offshore Wind Turbine
+for my journal: Gearbox pump failure prognostics in offshore wind turbine by an integrated data-driven model 
+please check https://doi.org/10.1016/j.apenergy.2024.124829
 
 # Abstract:
 This journal presents two-stage models for Remaining Useful Life (RUL) prediction of offshore wind turbines. The first model utilizes the LightGBM algorithm for temperature prediction, while the second model employs a GRU-BNN (Bayesian Neural Network) approach for RUL prediction based on residuals from LightGBM. The models are evaluated on a dataset, and the results are compared against various baseline machine learning models to demonstrate their effectiveness. The proposed GRU-BNN model combines the predictions from GRU with Bayesian Neural Networks (BNN) to provide a final prediction along with confidence intervals. The entire workflow is implemented in Python and is recommended to be executed on Google Colab for optimal performance.
@@ -36,4 +37,4 @@ The presented RUL prediction models using LightGBM and GRU-BNN demonstrate promi
 
 Keywords: Remaining Useful Life Prediction, Offshore Wind Turbine, LightGBM, GRU, BNN, Machine Learning, Confidence Intervals.
 
-Note: The data used in this project have been cleaned extensively. To ensure proper usage and respect for the work involved, only the original data are available upon request.
+Note: The data used in this project have been cleaned extensively. To ensure proper usage and respect for the work involved, only the original data are available upon request. please check https://www.edp.com/en/innovation/open-data
